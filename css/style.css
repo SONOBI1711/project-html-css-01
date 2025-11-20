@@ -1,0 +1,95 @@
+* {
+    box-sizing: border-box;
+}
+
+:root{
+  --primary-text-color: #171100;
+  --backgound-color: #fffcf4;
+  --white-color:#fff;
+}
+/*Đổi đơn vị px sang rem*/
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  /*1.6  rem= 16px*/
+  font-size: 1.6rem;
+  font-family: Poppins, sans-serif;
+}
+
+/* Common CSS */
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+/* Viet CSS cho phần header*/
+.header {
+  background-color: #fffcf4;
+  padding: 44px 0;
+}
+.header nav a {
+  font-weight: 600;
+  font-size:1.6 rem; /* tức là 16px */
+  line-height: 28px;
+  color: #5f5b53;
+  padding: 0 21px;
+}
+
+.header nav a :hover {
+  color: #171100;
+  text-shadow: 1px 0 0 currentColor;
+}
+
+.header .body{
+  display: flex;
+  align-items: center;
+}
+
+.header nav{
+  display: flex;
+  margin-left: auto;
+}
+
+.header nav a.active {
+  font-weight: 600; /*semi-bold*/
+  color: #171100;
+  position: relative;
+}
+
+/*pseudo element*/
+.header nav a.active ::after {
+  content: "";
+  width: 12px;
+  height: 2px;
+  border-radius:1px ;
+  -webkit-border-radius:1px ;
+  -moz-border-radius:1px ;
+  -ms-border-radius:1px ;
+  -o-border-radius:1px ;
+  background-color: #171100;
+  display: block;
+  position: absolute;
+}
+
+.header .main-content {
+  width:1170px;
+  margin: 0 auto;
+  max-width: calc(100%-16px);
+}
+
+.header .body .btn-sign-up {
+width: 144;
+height: 50;
+top: 36px;
+left: 1161px;
+angle: 0 deg;
+opacity: 1;
+border-radius: 24.5px;
+background-color: #171100;
+}
+/*Ket thuc CSS cho header*?
