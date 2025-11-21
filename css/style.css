@@ -1,11 +1,12 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-:root{
+:root {
   --primary-text-color: #171100;
   --backgound-color: #fffcf4;
-  --white-color:#fff;
+  --white-color: #fff;
+  --header-text-color: #5f5b53;
 }
 /*Đổi đơn vị px sang rem*/
 
@@ -29,67 +30,76 @@ li {
 }
 /* Viet CSS cho phần header*/
 .header {
-  background-color: #fffcf4;
+  background-color: var(--backgound-color);
   padding: 44px 0;
 }
+
+.header .body {
+  display: flex;
+  align-items: center; /*căn giữa theo trục dọc*/
+}
+
+.header nav {
+  display: flex;
+  align-items: center; /* <--- quan trọng: căn giữa các item trong nav */
+  margin-left: auto;
+}
+
 .header nav a {
   font-weight: 600;
-  font-size:1.6 rem; /* tức là 16px */
-  line-height: 28px;
-  color: #5f5b53;
-  padding: 0 21px;
+  font-size: 1.6rem; 
+  line-height: 2.8rem; /* 28px tương đương 2.8rem */
+  color: var(--header-text-color);
+  padding: 0 2.1rem; /* padding bằng rem cho nhất quán */
 }
 
-.header nav a :hover {
-  color: #171100;
+/*Pseudo class: lớp giả*/
+.header nav a:hover {
+  color: var(--primary-text-color);
   text-shadow: 1px 0 0 currentColor;
-}
-
-.header .body{
-  display: flex;
-  align-items: center;
-}
-
-.header nav{
-  display: flex;
-  margin-left: auto;
 }
 
 .header nav a.active {
   font-weight: 600; /*semi-bold*/
-  color: #171100;
+  color: var(--primary-text-color);
   position: relative;
 }
 
 /*pseudo element*/
-.header nav a.active ::after {
+.header nav a.active::after {
   content: "";
   width: 12px;
   height: 2px;
-  border-radius:1px ;
-  -webkit-border-radius:1px ;
-  -moz-border-radius:1px ;
-  -ms-border-radius:1px ;
-  -o-border-radius:1px ;
-  background-color: #171100;
+  border-radius: 1px;
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+  -ms-border-radius: 1px;
+  -o-border-radius: 1px;
+  background-color: var(--primary-text-color);
   display: block;
   position: absolute;
+  top: 23px;
+  left: 22px;
 }
 
 .header .main-content {
-  width:1170px;
+  width: 1170px;
   margin: 0 auto;
-  max-width: calc(100%-16px);
+  max-width: calc(100% - 16px);
 }
 
+/* nút call-to-action */
+
 .header .body .btn-sign-up {
-width: 144;
-height: 50;
-top: 36px;
-left: 1161px;
-angle: 0 deg;
-opacity: 1;
-border-radius: 24.5px;
-background-color: #171100;
+  display: inline-block; /* để width/height/line-height hoạt động */
+  width: 14.4rem; /* 144px = 14.4rem (nếu dùng root 62.5%) */
+  height: 5rem; /* 50px = 5rem */
+  line-height: 5rem; /* căn chữ theo chiều dọc */
+  border-radius: 2.45rem; /* 24.5px = 2.45rem */
+  background-color: var(--primary-text-color);
+  color: var(--white-color);
+  text-align: center;
+  margin-left: 4.9rem; /* nếu muốn khoảng cách so với menu */
+  font-weight: 600;
 }
-/*Ket thuc CSS cho header*?
+/*Ket thuc CSS cho header*/
